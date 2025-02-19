@@ -82,6 +82,17 @@ class UsuarioService : UserDetailsService {
             }
         }
 
+        // Comprobar el municipio
+        val datosMunicipios = externalApiService.obtenerMunicipiosDesdeApi(cpro)
+        if(datosMunicipios != null) {
+            if(datosMunicipios.data != null) {
+                datosMunicipios.data.stream().filter {
+                    it.DMUN50 == usuarioInsertadoDTO.direccion?.municipio?.uppercase()
+                }.findFirst().orElseThrow {
+                    BadRequestException("Municipio ${usuarioInsertadoDTO.direccion?.municipio} incorrecto")
+                }
+            }
+        }
 
 
         // Insertar el user (convierto a Entity)
