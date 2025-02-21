@@ -32,16 +32,9 @@ class UsuarioController {
     fun insert(
         httpRequest: HttpServletRequest,
         @RequestBody usuarioRegisterDTO: UsuarioRegisterDTO
-    ) : ResponseEntity<UsuarioDTO>?{
-            try {
-                val user=usuarioService.insertUser(usuarioRegisterDTO)
-                return ResponseEntity(user, HttpStatus.CREATED)
-
-            }catch (e: Exception){
-                println("Error:"+ e.message)
-                return ResponseEntity(HttpStatus.UNAUTHORIZED)
-            }
-
+    ) : ResponseEntity<UsuarioDTO> {
+        val user = usuarioService.insertUser(usuarioRegisterDTO)
+        return ResponseEntity(user, HttpStatus.CREATED)
     }
 
     @PostMapping("/login")
