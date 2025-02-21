@@ -1,15 +1,18 @@
 # Pruebas de gestión de usuarios
-Aclaraciones:
-El campo usuario consta de los siguientes atributos:
-    val _id: String?,
-    val username: String,
-    val password: String,
-    val email: String,
-    val roles: String = "USER",
-    val direccion: Direccion?
+# Pruebas de gestión de usuarios
 
-Aun así para registrar al usuario encontramos la clase UsuarioRegisterDTO y para realizar el login UsuarioLoginDTO
+## Aclaraciones:
+El campo **usuario** consta de los siguientes atributos:
+- `val _id: String?`
+- `val username: String`
+- `val password: String`
+- `val email: String`
+- `val roles: String = "USER"`
+- `val direccion: Direccion?`
 
+Aun así, para registrar al usuario encontramos las siguientes clases:
+
+### UsuarioRegisterDTO
 data class UsuarioRegisterDTO(
     val username: String,
     val email: String,
@@ -17,7 +20,8 @@ data class UsuarioRegisterDTO(
     val passwordRepeat: String,
     val rol: String,
     val direccion: Direccion
-    )
+)
+
 
 data class LoginUsuarioDTO(
     val username: String,
