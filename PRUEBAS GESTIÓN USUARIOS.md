@@ -1,7 +1,7 @@
 # Pruebas de gestión de usuarios
 # Pruebas de gestión de usuarios
 
-## Aclaraciones:
+### Aclaraciones:
 El campo **usuario** consta de los siguientes atributos:
 - `val _id: String?`
 - `val username: String`
@@ -12,21 +12,17 @@ El campo **usuario** consta de los siguientes atributos:
 
 Aun así, para registrar al usuario encontramos las siguientes clases:
 
-### UsuarioRegisterDTO
-data class UsuarioRegisterDTO(
-    val username: String,
-    val email: String,
-    val password: String,
-    val passwordRepeat: String,
-    val rol: String,
-    val direccion: Direccion
-)
+#### Registro de Usuario (`UsuarioRegisterDTO`)
+- `username: String`  
+- `email: String`  
+- `password: String`  
+- `passwordRepeat: String`  
+- `rol: String`  
+- `direccion: Direccion`  
 
-
-data class LoginUsuarioDTO(
-    val username: String,
-    val password: String
-    )
+#### Login de Usuario (`LoginUsuarioDTO`)
+- `username: String`  
+- `password: String`  
 
 ## Consultas desde Insomnia
 ### Registrar Usuario
