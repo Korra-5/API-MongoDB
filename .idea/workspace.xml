@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e931e002-f7f1-4ad3-b378-0bdc89aee39e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/es/aplicacion/controller/UsuarioController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/es/aplicacion/controller/UsuarioController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/es/aplicacion/security/SecurityConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/es/aplicacion/security/SecurityConfig.kt" afterDir="false" />
-    </list>
+    <list default="true" id="e931e002-f7f1-4ad3-b378-0bdc89aee39e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +103,7 @@
       <workItem from="1739473812015" duration="4467000" />
       <workItem from="1739555987065" duration="2276000" />
       <workItem from="1739563262707" duration="1603000" />
-      <workItem from="1739982019734" duration="14745000" />
+      <workItem from="1739982019734" duration="15093000" />
     </task>
     <servers />
   </component>
