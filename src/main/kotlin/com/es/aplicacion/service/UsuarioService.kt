@@ -50,14 +50,27 @@ class UsuarioService : UserDetailsService {
             throw BadRequestException("Uno o más campos vacíos")
         }
 
+        if(usuarioInsertadoDTO.password.length<4||usuarioInsertadoDTO.password.length>31) {
+            throw BadRequestException("La contraseña debe estar entre 5 y 30 caracteres")
+        }
+
+        if(usuarioInsertadoDTO.username.length<4||usuarioInsertadoDTO.username.length>31) {
+            throw BadRequestException("El usuario debe estar entre 4 y 30 caracteres")
+        }
+
+            if (!"^[\\w\\.-]+@([\\w\\-]+\\.)+(com|org|net|es|terra|gmail)$".toRegex().matches(usuarioInsertadoDTO.email)) {
+                throw BadRequestException("Introduce un email correcto")
+            }
+
+
         // Fran ha comprobado que el usuario existe previamente
         if(usuarioRepository.findByUsername(usuarioInsertadoDTO.username).isPresent) {
-            throw Exception("Usuario ${usuarioInsertadoDTO.username} ya está registrado")
+            throw BadRequestException("Usuario ${usuarioInsertadoDTO.username} ya está registrado")
         }
 
         // comprobar que ambas passwords sean iguales
         if(usuarioInsertadoDTO.password != usuarioInsertadoDTO.passwordRepeat) {
-            throw BadRequestException("Las contrasenias no coinciden")
+            throw BadRequestException("Las contraseñas no coinciden")
         }
 
         // Comprobar el ROL
