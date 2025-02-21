@@ -28,42 +28,73 @@ data class LoginUsuarioDTO(
 ### Registrar Usuario
 Nombre de usuario superior a 30 caracteres:
 
+![image](https://github.com/user-attachments/assets/0027d95b-eae8-4a82-b797-d5e448046282)
+
 Nombre de usuario inferior a 4 caracteres:
+
+![image](https://github.com/user-attachments/assets/f7293e46-0128-494e-9d92-0eff0e348a5f)
 
 Contraseña inferior a 4 caracteres:
 
+![image](https://github.com/user-attachments/assets/a9857bf4-5348-4d3c-b6e9-35e6e34f65e6)
+
 Contraseña superior a 4 caracteres:
 
+![image](https://github.com/user-attachments/assets/ce7accba-f887-4f69-aa0a-e48bd5a8bc7c)
 
 Contraseñas no coinciden:
 
+![image](https://github.com/user-attachments/assets/800ec9b3-ebae-45e9-a098-08a32577c542)
 
 Email no valido:
+
+![image](https://github.com/user-attachments/assets/091f61a5-64f3-42c0-8934-bd8e82edb6b8)
 
 
 Municipio no valido:
 
+![image](https://github.com/user-attachments/assets/b95ddfc5-46ed-4c01-91ea-0afb6f11b306)
 
 Provincia no valida
 
+![image](https://github.com/user-attachments/assets/e3530c72-cdab-46e6-9be3-cbdc68589e8c)
 
 Usuario ya existente
 
-
-No se pudo conectar con el servidor:
-
+![image](https://github.com/user-attachments/assets/b6bdcc67-b5e8-4d86-bb18-c7e886d3e1b2)
 
 Usuario creado:
-1- Se introducen los datos correctos y se le da al boton (Esta cargando)
+1- Usuario tipo USER:
 
-2- Si todo va bien se borran los campos y sale el mensaje de registro exitoso
+![image](https://github.com/user-attachments/assets/c424c247-3fcf-435d-a67a-11725d3ebe3b)
 
+2- Usuario tipo ADMIN:
+
+![image](https://github.com/user-attachments/assets/99e95b00-5ade-4e9a-8b13-a77f2fb9f8a0)
+
+Insercion en la base de datos:
+
+![image](https://github.com/user-attachments/assets/89977a5d-cd3f-4104-8f01-0f6f4059b445)
 
 ### Realizar login
 
+Credenciales incorrectas:
+1- Usuario
+
+![image](https://github.com/user-attachments/assets/f50e161d-554e-4f16-a9e6-eca4c8e0c8b7)
+
+2- Contraseña
+
+![image](https://github.com/user-attachments/assets/c1336e6d-cb84-418d-abba-d436a058f2ce)
+
+Login exitoso:
+
+![image](https://github.com/user-attachments/assets/7ce03480-8977-4f14-bc87-61b8e5543eff)
+
+
 ## Consultas desde Interfaz Grafica
 
-### Registrar Usuario
+### Registrar Usuario (En la interfaz un usuario no se puede registrar como ADMIN por motivos de seguridad)
 Nombre de usuario superior a 30 caracteres:
 
 ![image](https://github.com/user-attachments/assets/6f0ffae0-7278-4959-a0eb-cf8c6433e582)
@@ -108,6 +139,12 @@ Usuario creado:
 1- Se introducen los datos correctos y se le da al boton (Esta cargando)
 
 ![image](https://github.com/user-attachments/assets/8f14283e-83d2-4a13-8ac7-1dc27140c8fe)
+
+Inserción en la base de datos:
+
+![image](https://github.com/user-attachments/assets/2267f59b-d487-44b6-9705-969bb8949f69)
+
+
 2- Si todo va bien se borran los campos y sale el mensaje de registro exitoso
 
 ![image](https://github.com/user-attachments/assets/0cfab6a9-00f1-4fd8-a6ee-f58c55da3f5f)
