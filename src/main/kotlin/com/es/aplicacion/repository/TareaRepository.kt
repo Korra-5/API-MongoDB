@@ -8,5 +8,5 @@ import java.util.*
 
 @Repository
 interface TareaRepository: MongoRepository<Tarea, String> {
-    fun findByUsuario(usuario: String): Optional<Tarea>
+    fun findByUsuario(usuario: String): List<Tarea>
 }
