@@ -17,10 +17,10 @@ class TareasController {
     @Autowired
     private lateinit var tareaService: TareaService
 
-    @GetMapping("/verTareas")
+    @GetMapping("/verTareas/{username}")
     fun verTareas(
         httpRequest: HttpServletRequest,
-        @RequestParam  username: String
+        @PathVariable  username: String
     ): ResponseEntity<List<Tarea>> {
         val tareas = tareaService.verTareas(username)
         return ResponseEntity(tareas, HttpStatus.OK)     }
