@@ -38,7 +38,7 @@ class SecurityConfig {
             .authorizeHttpRequests { auth -> auth
                 auth.requestMatchers("Usuario/login").permitAll()
                 auth.requestMatchers("Usuario/register").permitAll()
-                auth.requestMatchers("Tarea/verTareas").permitAll()
+                auth.requestMatchers("Tarea/verTareas/{username}").permitAll()
                 auth.requestMatchers("Tarea/createTarea").permitAll()
             } // Los recursos protegidos y publicos
             .oauth2ResourceServer { oauth2 -> oauth2.jwt(Customizer.withDefaults()) }
