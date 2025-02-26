@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping ("/Usuario")
 class UsuarioController {
 
     @Autowired
@@ -30,7 +29,7 @@ class UsuarioController {
     @Autowired
     private lateinit var usuarioService: UsuarioService
 
-    @PostMapping("/register")
+    @PostMapping("/Usuario/register")
     fun insert(
         httpRequest: HttpServletRequest,
         @RequestBody usuarioRegisterDTO: UsuarioRegisterDTO
@@ -39,7 +38,7 @@ class UsuarioController {
         return ResponseEntity(user, HttpStatus.CREATED)
     }
 
-    @PostMapping("/login")
+    @PostMapping("/Usuario/login")
     fun login(@RequestBody usuario: LoginUsuarioDTO) : ResponseEntity<Any>? {
 
         val authentication: Authentication
