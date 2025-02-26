@@ -9,7 +9,7 @@ data class Tarea(
     val _id: String?,
     val titulo:String,
     val descripcion:String,
-    val completada:Boolean,
+    var completada:Boolean,
     val fechaCreacion: Date,
     val usuario:String
     ){

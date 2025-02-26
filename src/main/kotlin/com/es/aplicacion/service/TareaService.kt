@@ -30,4 +30,16 @@ class TareaService {
         println(tarea)
         return tareaRepository.save(tarea)
     }
-}
+
+    fun completarTarea(id:String): Tarea{
+        val tarea=tareaRepository.findBy_id(id)
+        tarea.completada=true
+        return tareaRepository.save(tarea)
+        }
+
+    fun deleteTarea(id:String):Tarea{
+        val tarea=tareaRepository.findBy_id(id)
+        tareaRepository.delete(tarea)
+        return tarea
+    }
+    }

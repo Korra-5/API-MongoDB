@@ -25,24 +25,24 @@ class TareasController {
         val tareas = tareaService.verTareas(username)
         return ResponseEntity(tareas, HttpStatus.OK)     }
 
-    @PutMapping("/completarTarea")
+    @PutMapping("/completarTarea/{id}")
     fun completarTarea(
         httpRequest: HttpServletRequest,
-        @RequestBody _id: String
-    ){
-
+        @PathVariable  id: String
+    ):ResponseEntity<Tarea>{
+        return ResponseEntity(tareaService.completarTarea(id), HttpStatus.OK)
     }
 
-    @DeleteMapping("/borrarTarea")
+    @DeleteMapping("/borrarTarea/{id}")
     fun borrarTarea(
         httpRequest: HttpServletRequest,
-        @RequestBody _id: String
-    ){
-
+        @PathVariable _id: String
+    ):ResponseEntity<Tarea>{
+        return ResponseEntity(tareaService.deleteTarea(_id),HttpStatus.OK)
     }
 
-    @PostMapping("/createTarea")
-    fun creaTarea(
+    @PostMapping("/crearTarea")
+    fun crearTarea(
         httpRequest: HttpServletRequest,
         @RequestBody tarea: TareaRegisterDTO
     ):ResponseEntity<Tarea>{

@@ -35,11 +35,13 @@ class SecurityConfig {
 
         return http
             .csrf { csrf -> csrf.disable() } // Cross-Site Forgery
-            .authorizeHttpRequests { auth -> 
+            .authorizeHttpRequests { auth ->
                 auth.requestMatchers("Usuario/login").permitAll()
                 auth.requestMatchers("Usuario/register").permitAll()
                 auth.requestMatchers("Tarea/verTareas/{username}").permitAll()
                 auth.requestMatchers("Tarea/createTarea").permitAll()
+                auth.requestMatchers("Tarea/deleteTarea/{id}").permitAll()
+                auth.requestMatchers("Tarea/completarTarea/{id}").permitAll()
             } // Los recursos protegidos y publicos
             .oauth2ResourceServer { oauth2 -> oauth2.jwt(Customizer.withDefaults()) }
             .sessionManagement { session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
