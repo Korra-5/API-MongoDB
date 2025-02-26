@@ -16,7 +16,7 @@ class TareasController {
     @Autowired
     private lateinit var tareaService: TareaService
 
-    @GetMapping("/Tarea/verTarea/{username}")
+    @GetMapping("/verTarea/{username}")
     fun verTarea(
         httpRequest: HttpServletRequest,
         @PathVariable  username: String
@@ -24,7 +24,7 @@ class TareasController {
         val tareas = tareaService.verTarea(username)
         return ResponseEntity(tareas, HttpStatus.OK)     }
 
-    @GetMapping("/Tarea/verTareas")
+    @GetMapping("/verTareas")
     @PreAuthorize("hasRole('ADMIN')")
     fun verTareas(
         httpRequest: HttpServletRequest,
@@ -33,7 +33,7 @@ class TareasController {
         return ResponseEntity(tareas, HttpStatus.OK)     }
 
 
-    @PutMapping("/Tarea/completarTarea/{id}")
+    @PutMapping("/completarTarea/{id}")
     fun completarTarea(
         httpRequest: HttpServletRequest,
         @PathVariable  id: String
@@ -41,7 +41,7 @@ class TareasController {
         return ResponseEntity(tareaService.completarTarea(id), HttpStatus.OK)
     }
 
-    @DeleteMapping("/Tarea/borrarTarea/{id}")
+    @DeleteMapping("/borrarTarea/{id}")
     fun borrarTarea(
         httpRequest: HttpServletRequest,
         @PathVariable id: String
@@ -49,7 +49,7 @@ class TareasController {
         return ResponseEntity(tareaService.deleteTarea(id),HttpStatus.OK)
     }
 
-    @PostMapping("/Tarea/crearTarea")
+    @PostMapping("/crearTarea")
     fun crearTarea(
         httpRequest: HttpServletRequest,
         @RequestBody tarea: TareaRegisterDTO

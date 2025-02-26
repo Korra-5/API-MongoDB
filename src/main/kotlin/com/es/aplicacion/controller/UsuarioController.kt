@@ -29,7 +29,7 @@ class UsuarioController {
     @Autowired
     private lateinit var usuarioService: UsuarioService
 
-    @PostMapping("/Usuario/register")
+    @PostMapping("/register")
     fun insert(
         httpRequest: HttpServletRequest,
         @RequestBody usuarioRegisterDTO: UsuarioRegisterDTO
@@ -38,7 +38,7 @@ class UsuarioController {
         return ResponseEntity(user, HttpStatus.CREATED)
     }
 
-    @PostMapping("/Usuario/login")
+    @PostMapping("/login")
     fun login(@RequestBody usuario: LoginUsuarioDTO) : ResponseEntity<Any>? {
 
         val authentication: Authentication
