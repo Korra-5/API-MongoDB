@@ -7,8 +7,8 @@ import jakarta.servlet.http.HttpServletRequest
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.web.bind.annotation.*
-import java.util.Optional
 
 @RestController
 @RequestMapping("/Tarea")
@@ -17,13 +17,22 @@ class TareasController {
     @Autowired
     private lateinit var tareaService: TareaService
 
-    @GetMapping("/verTareas/{username}")
-    fun verTareas(
+    @GetMapping("/verTarea/{username}")
+    fun verTarea(
         httpRequest: HttpServletRequest,
         @PathVariable  username: String
     ): ResponseEntity<List<Tarea>> {
-        val tareas = tareaService.verTareas(username)
+        val tareas = tareaService.verTarea(username)
         return ResponseEntity(tareas, HttpStatus.OK)     }
+
+    @GetMapping("/verTareas")
+    @PreAuthorize("hasRole('ADMIN')")
+    fun verTareas(
+        httpRequest: HttpServletRequest,
+    ): ResponseEntity<List<Tarea>> {
+        val tareas = tareaService.verTareas()
+        return ResponseEntity(tareas, HttpStatus.OK)     }
+
 
     @PutMapping("/completarTarea/{id}")
     fun completarTarea(
@@ -36,9 +45,9 @@ class TareasController {
     @DeleteMapping("/borrarTarea/{id}")
     fun borrarTarea(
         httpRequest: HttpServletRequest,
-        @PathVariable _id: String
+        @PathVariable id: String
     ):ResponseEntity<Tarea>{
-        return ResponseEntity(tareaService.deleteTarea(_id),HttpStatus.OK)
+        return ResponseEntity(tareaService.deleteTarea(id),HttpStatus.OK)
     }
 
     @PostMapping("/crearTarea")

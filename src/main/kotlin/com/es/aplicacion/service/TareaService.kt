@@ -14,7 +14,7 @@ class TareaService {
     @Autowired
     private lateinit var tareaRepository: TareaRepository
 
-    fun verTareas(username:String): List<Tarea> {
+    fun verTarea(username:String): List<Tarea> {
         return tareaRepository.findByUsuario(username)
     }
 
@@ -41,5 +41,9 @@ class TareaService {
         val tarea=tareaRepository.findBy_id(id)
         tareaRepository.delete(tarea)
         return tarea
+    }
+
+    fun verTareas():List<Tarea>{
+        return tareaRepository.findAll()
     }
     }
