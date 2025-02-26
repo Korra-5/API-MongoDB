@@ -11,13 +11,12 @@ import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/Tarea")
 class TareasController {
 
     @Autowired
     private lateinit var tareaService: TareaService
 
-    @GetMapping("/verTarea/{username}")
+    @GetMapping("/Tarea/verTarea/{username}")
     fun verTarea(
         httpRequest: HttpServletRequest,
         @PathVariable  username: String
@@ -25,7 +24,7 @@ class TareasController {
         val tareas = tareaService.verTarea(username)
         return ResponseEntity(tareas, HttpStatus.OK)     }
 
-    @GetMapping("/verTareas")
+    @GetMapping("/Tarea/verTareas")
     @PreAuthorize("hasRole('ADMIN')")
     fun verTareas(
         httpRequest: HttpServletRequest,
@@ -34,7 +33,7 @@ class TareasController {
         return ResponseEntity(tareas, HttpStatus.OK)     }
 
 
-    @PutMapping("/completarTarea/{id}")
+    @PutMapping("/Tarea/completarTarea/{id}")
     fun completarTarea(
         httpRequest: HttpServletRequest,
         @PathVariable  id: String
@@ -42,7 +41,7 @@ class TareasController {
         return ResponseEntity(tareaService.completarTarea(id), HttpStatus.OK)
     }
 
-    @DeleteMapping("/borrarTarea/{id}")
+    @DeleteMapping("/Tarea/borrarTarea/{id}")
     fun borrarTarea(
         httpRequest: HttpServletRequest,
         @PathVariable id: String
@@ -50,7 +49,7 @@ class TareasController {
         return ResponseEntity(tareaService.deleteTarea(id),HttpStatus.OK)
     }
 
-    @PostMapping("/crearTarea")
+    @PostMapping("/Tarea/crearTarea")
     fun crearTarea(
         httpRequest: HttpServletRequest,
         @RequestBody tarea: TareaRegisterDTO
