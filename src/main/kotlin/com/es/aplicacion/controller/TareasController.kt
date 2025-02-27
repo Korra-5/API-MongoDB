@@ -23,8 +23,7 @@ class TareasController {
         @PathVariable  username: String
     ): ResponseEntity<List<Tarea>> {
         val tareas = tareaService.verTarea(username)
-        return ResponseEntity(tareas, HttpStatus.OK)
-    }
+        return ResponseEntity(tareas, HttpStatus.OK)     }
 
     @GetMapping("/verTareas")
     @PreAuthorize("hasRole('ADMIN')")
