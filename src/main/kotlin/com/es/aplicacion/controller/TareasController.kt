@@ -11,6 +11,7 @@ import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.web.bind.annotation.*
 
 @RestController
+@RequestMapping("/Tarea")
 class TareasController {
 
     @Autowired
@@ -22,7 +23,8 @@ class TareasController {
         @PathVariable  username: String
     ): ResponseEntity<List<Tarea>> {
         val tareas = tareaService.verTarea(username)
-        return ResponseEntity(tareas, HttpStatus.OK)     }
+        return ResponseEntity(tareas, HttpStatus.OK)
+    }
 
     @GetMapping("/verTareas")
     @PreAuthorize("hasRole('ADMIN')")
