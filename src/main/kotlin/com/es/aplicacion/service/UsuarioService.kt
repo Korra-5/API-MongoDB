@@ -3,6 +3,7 @@ package com.es.aplicacion.service
 import com.es.aplicacion.dto.UsuarioDTO
 import com.es.aplicacion.dto.UsuarioRegisterDTO
 import com.es.aplicacion.error.exception.BadRequestException
+import com.es.aplicacion.error.exception.NotFoundException
 import com.es.aplicacion.error.exception.UnauthorizedException
 import com.es.aplicacion.model.Usuario
 import com.es.aplicacion.repository.UsuarioRepository
@@ -28,7 +29,7 @@ class UsuarioService : UserDetailsService {
         var usuario: Usuario = usuarioRepository
             .findByUsername(username!!)
             .orElseThrow {
-                UnauthorizedException("$username no existente")
+                NotFoundException("$username no existente")
             }
 
         return User.builder()

@@ -38,11 +38,11 @@ class SecurityConfig {
             .authorizeHttpRequests { auth ->
                 auth.requestMatchers("/Usuario/login").permitAll()
                 auth.requestMatchers("/Usuario/register").permitAll()
-                auth.requestMatchers("/Tarea/verTarea/{username}").permitAll()
-                auth.requestMatchers("/Tarea/verTareas").permitAll()
-                auth.requestMatchers("/Tarea/crearTarea").permitAll()
-                auth.requestMatchers("/Tarea/borrarTarea/{id}").permitAll()
-                auth.requestMatchers("/Tarea/completarTarea/{id}").permitAll()
+                auth.requestMatchers("/Tarea/verTarea/{username}").authenticated()
+                auth.requestMatchers("/Tarea/verTareas").authenticated()
+                auth.requestMatchers("/Tarea/crearTarea").authenticated()
+                auth.requestMatchers("/Tarea/borrarTarea/{id}").authenticated()
+                auth.requestMatchers("/Tarea/completarTarea/{id}").authenticated()
             } // Los recursos protegidos y publicos
             .oauth2ResourceServer { oauth2 -> oauth2.jwt(Customizer.withDefaults()) }
             .sessionManagement { session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
