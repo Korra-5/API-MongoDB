@@ -60,13 +60,11 @@ class TareaService {
             Date.from(Instant.now()),
             tareaRegister.usuario
         )
-        val existUser=tareaRepository.findByUsuario(tareaRegister.usuario).firstOrNull()
+        val existUser=usuarioRepository.findByUsername(tareaRegister.usuario).orElseThrow {
+            throw NotFoundException("El usuario no existe")
+        }
         if (auth.name==tarea.usuario||usuario.roles=="ADMIN") {
-            if (existUser!=null){
                 return tareaRepository.save(tarea)
-            }else {
-                throw NotFoundException("El usuario no existe")
-            }
         }else{
             throw ForbidenException("No tienes acceso a este recurso")
         }
