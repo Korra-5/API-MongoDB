@@ -3,7 +3,7 @@ package com.es.aplicacion.service
 import com.es.aplicacion.model.Tarea
 import com.es.aplicacion.dto.TareaRegisterDTO
 import com.es.aplicacion.error.exception.BadRequestException
-import com.es.aplicacion.error.exception.ForbidenException
+import com.es.aplicacion.error.exception.ForbiddenException
 import com.es.aplicacion.error.exception.NotFoundException
 import com.es.aplicacion.model.Usuario
 import com.es.aplicacion.repository.TareaRepository
@@ -36,7 +36,7 @@ class TareaService {
         if (auth.name==username||usuario.roles=="ADMIN") {
             return tareaRepository.findByUsuario(username)
         }else {
-            throw ForbidenException("No tienes acceso a este recurso")
+            throw ForbiddenException("No tienes acceso a este recurso")
         }
     }
 
@@ -66,7 +66,7 @@ class TareaService {
         if (auth.name==tarea.usuario||usuario.roles=="ADMIN") {
                 return tareaRepository.save(tarea)
         }else{
-            throw ForbidenException("No tienes acceso a este recurso")
+            throw ForbiddenException("No tienes acceso a este recurso")
         }
     }
 
@@ -85,10 +85,11 @@ class TareaService {
                 tarea.completada = true
                 return tareaRepository.save(tarea)
             }else{
-                throw BadRequestException("Esta tarea ya esta completada")
+                tarea.completada = false
+                return tareaRepository.save(tarea)
             }
     }else{
-        throw ForbidenException("No tienes acceso a este recurso")
+        throw ForbiddenException("No tienes acceso a este recurso")
     }
         }
 
@@ -103,7 +104,7 @@ class TareaService {
             tareaRepository.delete(tarea)
             return tarea
         }else{
-            throw ForbidenException("No tienes acceso a este recurso")
+            throw ForbiddenException("No tienes acceso a este recurso")
         }
     }
 
@@ -116,7 +117,7 @@ class TareaService {
         if (usuario.roles=="ADMIN") {
             return tareaRepository.findAll()
         }else{
-            throw ForbidenException("No tienes acceso a este recurso")
+            throw ForbiddenException("No tienes acceso a este recurso")
         }
     }
     }

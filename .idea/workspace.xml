@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bfdde049-7e0b-4dbc-bb9b-aa138fdd4614" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/aplicacion-0.0.1-SNAPSHOT.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/es/aplicacion/repository/UsuarioRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/es/aplicacion/repository/UsuarioRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/es/aplicacion/error/exception/NotFoundException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/es/aplicacion/error/exception/NotFoundException.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/es/aplicacion/service/TareaService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/es/aplicacion/service/TareaService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +152,7 @@
       <workItem from="1740672173937" duration="1607000" />
       <workItem from="1740675326757" duration="9317000" />
       <workItem from="1741022139648" duration="2247000" />
-      <workItem from="1741185252206" duration="4227000" />
+      <workItem from="1741185252206" duration="8433000" />
     </task>
     <servers />
   </component>

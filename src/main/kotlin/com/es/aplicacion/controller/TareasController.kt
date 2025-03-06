@@ -2,7 +2,6 @@ package com.es.aplicacion.controller
 
 import com.es.aplicacion.model.Tarea
 import com.es.aplicacion.dto.TareaRegisterDTO
-import com.es.aplicacion.error.exception.ForbidenException
 import com.es.aplicacion.repository.TareaRepository
 import com.es.aplicacion.repository.UsuarioRepository
 import com.es.aplicacion.service.TareaService
@@ -12,9 +11,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.security.authentication.AuthenticationManager
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.web.bind.annotation.*
-import org.springframework.security.core.context.SecurityContextHolder
 
 
 @RestController
